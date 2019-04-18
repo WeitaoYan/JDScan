@@ -67,5 +67,6 @@ if __name__ == "__main__":
             goods = page.get_all_goods()
             url = page.get_next_page_url()
     finally:
-        fwk.closeDriver()
+        # fwk.close_driver()
+        print "end in finally"
     print "end"

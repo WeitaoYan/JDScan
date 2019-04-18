@@ -60,8 +60,9 @@ class TestFrameworkChromePC(object):
                 return YouHuiQuanManJian(0, m.group(1))
         return None
 
-    def closeDriver(self):
+    def close_driver(self):
         self.driver.close()
+
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -69,14 +70,16 @@ if __name__ == "__main__":
     fwk = TestFrameworkChromePC()
     try:
         res_list = []
-        # goodsids = ["7265178", "2751756", "30026662492", "25206509193", "4333597", "1250248", "5193076", "1749283", "38252417132", "26282930680", "6988816", "7202389", "879250"]
+        # goodsids = ["7265178", "2751756", "30026662492", "25206509193", "4333597", "1250248", "5193076", "1749283",
+        #  "38252417132", "26282930680", "6988816", "7202389", "879250"]
         goodsids = [8181054]
         for goodsid in goodsids:
             try:
                 goods = Goods.Goods(fwk, goodsid)
             except Goods.GetPriceError as _:
                 continue
-        print "end...take %s s" % (time.time() - start_time)
     finally:
-        fwk.closeDriver()
-        del fwk
+        # fwk.close_driver()
+        # del fwk
+        print "end in finally"
+    print "end...take %s s" % (time.time() - start_time)
