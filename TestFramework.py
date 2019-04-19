@@ -43,23 +43,6 @@ class TestFrameworkChromePC(object):
                     finish = True
         return BeautifulSoup(self.driver.page_source, "html.parser")
 
-    def getYouHuiQuanFromCenter(self, soup):
-        if r"折" in soup.text:
-            m = re.search(ur"(\d(\.\d+)?)折满(\d+)可用", soup.text)
-            if m:
-                # print soup.text + "mz"
-                return YouHuiQuanManZhe(m.group(2), m.group(1))
-        elif r"¥" in soup.text:
-            mj = re.search(ur"¥(\d+)满(\d+)可用", soup.text) #¥20满199可用
-            if mj:
-                # print soup.text + "mj"
-                return YouHuiQuanManJian(mj.group(2), mj.group(1))
-            m = re.search(ur"¥(\d+)", soup.text)
-            if m:
-                # print soup.text + "m"
-                return YouHuiQuanManJian(0, m.group(1))
-        return None
-
     def close_driver(self):
         self.driver.close()
 

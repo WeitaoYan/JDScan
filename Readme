@@ -1,3 +1,6 @@
+TestFramework.py中Chrome_path = "C:\Users\weitaoyx\Downloads\chromedriver_win32\chromedriver.exe"
+配置chromedriver.exe的路径，使用者应该按照实际情况修改，或者改为环境变量方式。
+
 目前支持三种使用方法：
 1,TestFramework.py
 测试模块中 goodsids = [8181054] 可以增加自己感兴趣的商品ID到列表，
