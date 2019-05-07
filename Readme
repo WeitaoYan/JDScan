@@ -1,4 +1,4 @@
-TestFramework.py中Chrome_path = "C:\Users\weitaoyx\Downloads\chromedriver_win32\chromedriver.exe"
+TestFramework.py中Chrome_path = "xx\chromedriver.exe"
 配置chromedriver.exe的路径，使用者应该按照实际情况修改，或者改为环境变量方式。
 
 目前支持三种使用方法：
